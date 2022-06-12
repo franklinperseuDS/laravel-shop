@@ -43,3 +43,13 @@ Route::get('/view/bs', function(){
 Route::post('/client/store',[clientController::class,'store']);
 
 Route::post('/client/{id}',[clientController::class,'update']);
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
