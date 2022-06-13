@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header">Create Client</div>
     <div class="card-body">
-        <form action="{{ route('clients.create')}}" method="POST">
+        <form action="{{ route('clients.store')}}" method="POST">
            @csrf
             
             

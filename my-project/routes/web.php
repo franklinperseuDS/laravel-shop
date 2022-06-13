@@ -21,12 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::post('/client/{id}',[clientController::class,'update']);
+
 Route::post('/client/store',[clientController::class,'store'])->name('clients.store');
 Route::get('/client/create',[clientController::class,'create'])->name('clients.create');
 
 Route::get('/clients',[clientController::class, 'index'])->name('clients.index');
-
+// Route::post('/client/{id}',[clientController::class,'clients.update']);
 Route::get('/users',[UserController::class, 'index'])->name('users.index');
 
 Route::get('/dashboard', function () {
