@@ -20,3 +20,26 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/client/store',[clientController::class,'store']);
+
+Route::get('/factories/clients', function() {
+    return \App\Models\Clients::all();
+});
+
+Route::get('/factories/products', function() {
+    return \App\Models\Products::all();
+});
+Route::get('/factories/purchase', function() {
+    return \App\Models\PurchaseOrders::all();
+});
+
+Route::get('/client',[clientController::class,'showClient']);
+Route::get('/client/{id}',[clientController::class,'getById']);
+
+Route::get('/view/client', function(){
+    return view('clients', ['name' => 'Thomas']);
+});
+
+Route::get('/view/bs', function(){
+    return view('testebs');
+});
+

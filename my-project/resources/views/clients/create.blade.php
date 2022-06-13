@@ -1,15 +1,15 @@
-@extend('clientsLayout')
+@extends('clients.layout')
 @section('content')
 
 <div class="card">
-    <div class="card-header">Edit Client</div>
+    <div class="card-header">Create Client</div>
     <div class="card-body">
-        <form action="{{ url('client/'.$client->id"}} method="post">
-            {!! crsf_field() !!}
+        <form action="{{ route('clients.create')}}" method="POST">
+           @csrf
             
             
             <label for="namecliente"> Nome do cliente: </label>
-            <input type="text" name='namecliente'  class="form-control">
+            <input type="text" name='nomecliente'  class="form-control">
 
             <label for="cpf"> CPF : </label>
             <input type="text" name='cpf'  class="form-control">

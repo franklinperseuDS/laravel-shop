@@ -1,4 +1,4 @@
-@extends('clients.clientsLayout')
+@extends('clients.layout')
 @section('content')
     <div class="container">
         <div class="row">
@@ -9,7 +9,7 @@
                     </h2>
                 </div>
                 <div class="card-body">
-                    <a href="{{ url('/client/store') }}" class="btn btn-success btn-sm"> 
+                    <a href="{{ route('clients.create') }}" class="btn btn-success btn-sm"> 
                          <i class="fa fa-plus" aria-hidden="true"></i> Add new
                     </a>
 
