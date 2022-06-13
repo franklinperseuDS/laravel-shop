@@ -49,12 +49,32 @@ class clientController extends Controller
         return view('clients.index',compact('clients'));
         // return view('clients.index');
     }
+
+    public function edit(Request $request, $id)
+    {
+        if(!$clients = $this->model::find($id))
+        {
+            return redirect()->route('clients.index');
+        }
+
+        // $data = $request->all();
+        return view('clients.edit',compact('clients'));
+
+
+    }
+
     public function update(Request $request, $id)
     {
-        $client = Clients::find($id);
-        $input = $request->all();
-        $client->update($input);
-        return redirect('clients')->with('flash_message','cliente updated');
+        // dd($id);
+        if(!$clients = $this->model::find($id))
+        {
+            return redirect()->route('clients.index');
+        }
+       
+        
+        // dd($request);
+        $clients->update($request->all());
+        return redirect()->route('clients.index');
     }
 
     public function create()

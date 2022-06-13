@@ -24,7 +24,8 @@ Route::get('/', function () {
 
 Route::post('/client/store',[clientController::class,'store'])->name('clients.store');
 Route::get('/client/create',[clientController::class,'create'])->name('clients.create');
-
+Route::put('/clients/{id}', [clientController::class,'update'])->name('clients.update');
+Route::get('/clients/{id}/edit', [clientController::class,'edit'])->name('clients.edit');
 Route::get('/clients',[clientController::class, 'index'])->name('clients.index');
 // Route::post('/client/{id}',[clientController::class,'clients.update']);
 Route::get('/users',[UserController::class, 'index'])->name('users.index');

@@ -35,7 +35,7 @@
                                         <td> {{ $client ->email}} </td>
                                         <td> {{ $client ->cpf}} </td>
                                         <td>
-                                            <a href="{{ url('/client/'. $client->id) }}">Edit</a>
+                                            <a href='{{ route("clients.edit",$client->id) }}'>Edit</a>
                                             <a href="">Delete</a>
                                         </td>
                                     </tr>
